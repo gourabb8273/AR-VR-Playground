@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AR Experience with A-Frame</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="./events/play-on-click.js"></script>
+    <script src="./events/position-on-scroll.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-sky color="#174982" rotation="0 -90 0"></a-sky>
+      <a-entity position="-15 14 -20" scale="0.6 0.6 0.6">
+        <a-gltf-model src="./assets/model/cloud/scene.gltf"></a-gltf-model>
+      </a-entity>
+      <a-entity position="-10 14 -20" scale="0.6 0.6 0.6">
+        <a-gltf-model src="./assets/model/cloud/scene.gltf"></a-gltf-model>
+      </a-entity>
+      <a-entity position="-1 14 -20" scale="0.6 0.6 0.6">
+        <a-gltf-model src="./assets/model/cloud/scene.gltf"></a-gltf-model>
+      </a-entity>
+      <a-entity position="5 14 -20" scale="0.6 0.6 0.6">
+        <a-gltf-model src="./assets/model/cloud/scene.gltf"></a-gltf-model>
+      </a-entity> 
+       <a-entity position="8 14 -20" scale="0.6 0.6 0.6">
+        <a-gltf-model src="./assets/model/cloud/scene.gltf"></a-gltf-model>
+      </a-entity>
+
+      <a-entity
+        position="-2 -0.28 -5"
+        color="#174982"
+        scale="1 1 1"
+        position-on-scroll
+      >
+        <a-gltf-model src="./assets/model/human/scene.gltf"></a-gltf-model>
+      </a-entity>
+
+      <a-plane
+        position="0 0 -5"
+        rotation="-90 0 0"
+        width="100"
+        height="100"
+        color="#3e3117"
+        
+      ></a-plane>
+
+      <a-assets>
+        <video
+          id="videoBunny"
+          preload="auto"
+          src="./assets/video_AR.mp4"
+          width="5"
+          height="6"
+          autoplay
+          loop="true"
+          crossorigin="anonymous"
+        ></video>
+      </a-assets>
+      <a-entity position="0 0 -6.5" scale="0.13 0.12 0.08">
+        <a-gltf-model src="./assets/model/house/scene.gltf"></a-gltf-model>
+      </a-entity>
+      <a-video
+        src="#videoBunny"
+        width="7"
+        height="4"
+        position="9.381 1.495 -8.523"
+        play-on-click
+      >
+      </a-video>
+      <a-text
+        value="Play/Pause"
+        width="8"
+        color="white"
+        position="8.381 0.295 -8.523"
+      ></a-text>
+    </a-scene>
+  </body>
+</html>

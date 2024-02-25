@@ -1,0 +1,11 @@
+Model Information:
+* title:	Female - Style 3 (Pose 4: Running)
+* source:	https://sketchfab.com/3d-models/female-style-3-pose-4-running-1367b647eaa04fb1b64538882059769e
+* author:	Mifu Saja (https://sketchfab.com/mifusaja)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Female - Style 3 (Pose 4: Running)" (https://sketchfab.com/3d-models/female-style-3-pose-4-running-1367b647eaa04fb1b64538882059769e) by Mifu Saja (https://sketchfab.com/mifusaja) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

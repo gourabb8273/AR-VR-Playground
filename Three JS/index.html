@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Experience with Three JS</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <script type="module">
+        import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.161.0/three.module.min.js";
+
+        const WIDTH = window.innerWidth;
+        const HEIGHT = window.innerHeight;
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(WIDTH, HEIGHT);
+        renderer.setClearColor(0xdddddd, 1);
+        document.body.appendChild(renderer.domElement);
+
+        // Scene
+        const scene = new THREE.Scene();
+
+        // Camera
+        const camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT);
+        camera.position.z = 50;
+        scene.add(camera);
+
+        // Geometries
+        const planeGeometry = new THREE.PlaneGeometry(80, 80);
+        const boxGeometry = new THREE.BoxGeometry(20, 15, 10);
+        const coneGeometry = new THREE.ConeGeometry(5, 10, 32);
+        const cylinderGeometry = new THREE.CylinderGeometry(5, 5, 15, 22);
+        const sphereGeometry = new THREE.SphereGeometry(5, 32, 32);
+
+        // Materials
+        const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xfcf5cd, side: THREE.DoubleSide }); 
+        const basicMaterial = new THREE.MeshBasicMaterial({ color: 0x741b47, side: THREE.DoubleSide });
+        const coneMaterial = new THREE.MeshPhongMaterial({ color: 0xff9900 });
+        const sphereMaterial = new THREE.MeshPhongMaterial({ color: 0x660000 });
+        const lambertMaterial = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
+
+        // Meshes
+        const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+        const box = new THREE.Mesh(boxGeometry, basicMaterial);
+        const cone = new THREE.Mesh(coneGeometry, coneMaterial);
+        const cylinder = new THREE.Mesh(cylinderGeometry, lambertMaterial);
+        const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+
+        // Positioning
+        plane.position.y = -5; 
+        plane.rotation.x = Math.PI / 2; 
+        box.position.x = -20;
+        cone.position.x = 20;
+        cylinder.position.y = 20;
+
+        // Adding to scene
+        scene.add(plane);
+        scene.add(box);
+        scene.add(cone);
+        scene.add(cylinder);
+        scene.add(sphere);
+
+        // Lights
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Box rotation
+            box.rotation.x += 0.01;
+            box.rotation.y += 0.01;
+
+            // Cylinder position change
+            cylinder.position.z = 10 * Math.sin(Date.now() * 0.001);
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
