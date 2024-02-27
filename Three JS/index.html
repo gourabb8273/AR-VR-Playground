@@ -25,15 +25,15 @@
         renderer.setClearColor(0xdddddd, 1);
         document.body.appendChild(renderer.domElement);
 
-        // Scene
+        // Creating Scene
         const scene = new THREE.Scene();
 
-        // Camera
+        // Adding Camera and position
         const camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT);
         camera.position.z = 50;
         scene.add(camera);
 
-        // Geometries
+        //Adding different Geometries
         const planeGeometry = new THREE.PlaneGeometry(80, 80);
         const boxGeometry = new THREE.BoxGeometry(20, 15, 10);
         const coneGeometry = new THREE.ConeGeometry(5, 10, 32);
@@ -46,15 +46,13 @@
         const coneMaterial = new THREE.MeshPhongMaterial({ color: 0xff9900 });
         const sphereMaterial = new THREE.MeshPhongMaterial({ color: 0x660000 });
         const lambertMaterial = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
-
-        // Meshes
+      
         const plane = new THREE.Mesh(planeGeometry, planeMaterial);
         const box = new THREE.Mesh(boxGeometry, basicMaterial);
         const cone = new THREE.Mesh(coneGeometry, coneMaterial);
         const cylinder = new THREE.Mesh(cylinderGeometry, lambertMaterial);
         const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-
-        // Positioning
+ 
         plane.position.y = -5; 
         plane.rotation.x = Math.PI / 2; 
         box.position.x = -20;
@@ -68,7 +66,7 @@
         scene.add(cylinder);
         scene.add(sphere);
 
-        // Lights
+        // Adding Ambient Lights
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
 
