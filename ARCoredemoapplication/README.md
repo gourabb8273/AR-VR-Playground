@@ -42,6 +42,7 @@ You can interact with the placed virtual objects as per the application function
 We will be adding a snake in the plane through AR experience.
 
 ![alt text](image.png)
+![alt text](image-2.png)
 ![alt text](image-1.png)
 
 
