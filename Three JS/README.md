@@ -28,5 +28,6 @@ Open the `index.html` file in a web browser.
 - **Ambient Light:** Added to the scene.
 
 ## 3D Scene Preview
-
+Using Scroll Up and Down we can change the position of the Object i.e. girl.
+![alt text](image-1.png)
 ![alt text](image.png)
